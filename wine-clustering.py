@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 
 df = pd.read_csv('wine-clustering.csv')
 
-X = df.drop(['Nonflavanoid_Phenols', 'Alcohol', 'Malic_Acid', 'Total_Phenols', 'Flavanoids', 'Nonflavanoid_Phenols', 'Proanthocyanins', 'Color_Intensity', 'Hue', 'OD280', 'Ash_Alcanity'], axis=1)
+X = df.drop(['Nonflavanoid_Phenols', 'Alcohol', 'Malic_Acid', 'Total_Phenols', 'Flavanoids', 'Nonflavanoid_Phenols', 'Proanthocyanins', 'Color_Intensity', 'Hue', 'OD280', 'Proline'], axis=1)
 
 st.header ("Dataset")
 st.write(X)
