@@ -32,12 +32,86 @@ Dataset: [Wine Cluster](https://www.kaggle.com/datasets/harrywang/wine-dataset-f
 
 ### Variabel-variabel pada Heart Failure Prediction Dataset adalah sebagai berikut:
 
-- Menu          (Menentukan ukuran menu)            = objek (Ukuran : Besar, sedang, kecil)
-- Calories      (Menentukan jumlah kalori)          = int (mg)
-- Fat_Calories  (Menentukan jumlah lemak kalori )   = int (kcal)
-- Total_fat     (Menentukan jumlah lemak total)     = float (mg)
-- Cholesterol   (Menentukan jumalah kolestrol)      = int (mg)
-- Sodium        (Menentukan jumlah sodium)          = int (9)
-- Carbohydrate  (Menentukan jumlah karbohidrat)     = int (g)
-- Sugars        (Menentukan jumlah gula)            = int (g)
-- Protein       (Menentukan jumlah protein)         = float (g)
+- Alcohol                         ( Menentukan jumlah kandungan alkohol) (%)                  
+- Malic acid                      ( Menetukan jumlah kandungan asam malat ) (g/L)
+- Ash                             ( Menetukan jumlah kangdungan abu ) (g/L)
+- Alcalinity of ash               ( Menetukan jumlah kandungan alkalinitas abu ) (meq/L) 
+- Magnesium                       ( Menentukan jumlah kandungan magnesium ) (g/L)
+- Total phenols                   ( Menentukan jumlah kandungan senyawa fenolik ) (g/L)
+- Flavanoids                      ( Menentukan jumlah kandungan flavanoids ) (g/L)
+- Nonflavanoid phenols            ( Menentukan Jumlah kandungan Nonflavanoid phenols ) (g/L)
+- Proanthocyanins                 ( Menentukan jumlah kandungan Proanthocyanins ) (g/L)
+- Color intensity                 ( Menentukan jumlah kandungan Intensitas Warna ) 
+- Hue                             ( Menentukan jumlah kandungan jenis warna ) 
+- OD280/OD315 of diluted wines    (Menentukan jumlah kandungan anggur yang diencerkan )
+- Proline                         ( Menentukan jumlah kandungan proline ) (g/L)
+
+## Data Preparation
+**Data Collection**<br>
+Untuk data collection ini, saya mendapatkan dataset yang nantinya digunakan dari website kaggle dengan nama dataset wine clustering.
+
+## Library yang akan digunakan
+**Data Discovery And Profiling**<br>
+Teknik EDA.<br>
+
+Import semua library yang dibutuhkan
+
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    import sklearn.cluster as cluster
+    from sklearn.model_selection import train_test_split
+    from sklearn.cluster import KMeans
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.metrics import silhouette_score
+    from yellowbrick.cluster import KElbowVisualizer
+    from sklearn.decomposition import PCA
+
+ ## Deskripsi Dataset
+Karena kita memakai googgle collab bukan csv maka kita Import file 
+
+    from google.colab import files
+
+Upload token kaggle agar nanti bisa mendownload sebuah dataset dari kaggle melalui google colab
+
+    file.upload()
+
+Setelah mengupload filenya, selanjutnya membuat folder untuk menyimpan file kaggle.json yang sudah diupload tadi
+
+    !mkdir -p ~/.kaggle
+    !cp kaggle.json ~/.kaggle/
+    !chmod 600 ~/.kaggle/kaggle.json
+    !ls ~/.kaggle
+
+Lalu download datasetsnya
+     !kaggle datasets download -d harrywang/wine-dataset-for-clustering
+
+Extract file yang tadi telah didownload
+
+    !mkdir wine-dataset-for-clustering
+    !unzip wine-dataset-for-clustering.zip -d wine-dataset-for-clustering
+    !ls wine-dataset-for-clustering
+
+### Data Descovery
+Membaca sebuah file CSV yang berisi data anggur
+
+    df = pd.read_csv("/content/wine-dataset-for-clustering/wine-clustering.csv")
+    df.head()
+    
+Menampilkan beberapa baris pertama dari suatu dataset yang disimpan dalam bentuk dataframe.
+
+    df.head()
+
+Menampilkan informasi ringkas tentang tabel data dalam pandas.
+
+    df.info()
+    
+Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom numerik dalam DataFrame.
+
+    df.describe()
+
+### EDA
+
+
+
