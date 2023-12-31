@@ -32,7 +32,7 @@ elbo_plot = st.pyplot()
 st.sidebar.subheader("Nilai jumlah K")
 clust = st.sidebar.slider("Pilih Jumlah Cluster :", 2,10,3,1)
 
-def k_means(n_clust):("Nilai jumlah K")
+def k_means(n_clust):
     kmean = KMeans(n_clusters=n_clust).fit(X)
     X['Labels'] = kmean.labels_
     
