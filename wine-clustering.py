@@ -51,5 +51,33 @@ def k_means(n_clust):
     st.header('Wine Cluster Plot')
     st.pyplot()
     st.write(X)
+
+    st.header('Wine Cluster Plot')
+    st.write(X)
+
+    # Create a 3D scatter plot
+    fig = plt.figure(figsize=(10, 8))
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Scatter plot with colors based on Labels
+    scatter = ax.scatter(
+    df['Ash'],
+    df['Ash_Alcanity'],
+    df['Magnesium'],
+    c=kmeans.labels_,
+    cmap='viridis',
+    s=50  # Marker size
+    )
+
+    # Customize the plot
+    ax.set_xlabel('Ash')
+    ax.set_ylabel('Ash_Alcanity')
+    ax.set_zlabel('Magnesium')
+    ax.set_title('KMeans Clustering in 3D')
+
+    # Add a colorbar
+    colorbar = fig.colorbar(scatter, ax=ax, pad=0.1, shrink=0.6)
+    colorbar.set_label('Labels')
+
     
 k_means(clust)
