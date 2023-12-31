@@ -113,5 +113,39 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 
 ## EDA
 
+1. Mengurutkan kandungan nilai alkohol terendah sampapi tertinggi
 
+    df.sort_values("Alcohol").head(10)
+   
+    ![Alt text](image-1.png)
+
+2. Mengurutkan kandungan nilai proline terendah sampai tertinggi
+
+    df.sort_values("Proline").head()
+
+    ![Alt text](image-1.png)
+
+3. Menampilkan berapa banyak tipe kandungan Alcohol
+
+    df["Alcohol"].value_counts()
+
+    ![Alt text](image-1.png)
+
+4. Mengurutkan banyak kandungan nilai alkohol berdasarkan kandungan nilai magnesium
+
+    df_sorted = df.sort_values(by=['Alcohol', 'Magnesium'], ascending=[True,False])
+    df_sorted.head()
+
+    ![Alt text](image-1.png)
+
+5. Menampilkan jumlah kandungan nilai alkohol pada estimasi jumlah kandungan nilai magnesium
+
+    pd.crosstab(df["Alcohol"],df["Magnesium"], margins=True)
+
+    ![Alt text](image-1.png)
+
+
+## Preprocessing
+
+    
 
