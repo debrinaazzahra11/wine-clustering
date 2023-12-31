@@ -93,7 +93,7 @@ Extract file yang tadi telah didownload
     !unzip wine-dataset-for-clustering.zip -d wine-dataset-for-clustering
     !ls wine-dataset-for-clustering
 
-### Data Descovery
+## Data Descovery
 Membaca sebuah file CSV yang berisi data anggur
 
     df = pd.read_csv("/content/wine-dataset-for-clustering/wine-clustering.csv")
@@ -111,7 +111,7 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 
     df.describe()
 
-### EDA
+## EDA
 
 
 
