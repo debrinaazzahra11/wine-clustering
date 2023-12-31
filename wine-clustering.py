@@ -9,7 +9,7 @@ df = pd.read_csv('wine-clustering.csv')
 
 X = df.drop(['Nonflavanoid_Phenols', 'Alcohol', 'Malic_Acid', 'Total_Phenols', 'Flavanoids', 'Nonflavanoid_Phenols', 'Proanthocyanins', 'Color_Intensity', 'Hue', 'OD280', 'Proline'], axis=1)
 
-st.header ("Dataset")
+st.header ("Dataset Wine Cluster")
 st.write(X)
 
 # Menentukan Jumlah Cluster Dengan Elbow
@@ -29,7 +29,7 @@ plt.show()
 st.set_option('deprecation.showPyplotGlobalUse', False)
 elbo_plot = st.pyplot()
 
-st.sidebar.subheader("Nilai jumlah K")
+st.sidebar.subheader("Nilai jumlah Cluster")
 clust = st.sidebar.slider("Pilih Jumlah Cluster :", 2,10,3,1)
 
 def k_means(n_clust):
@@ -48,7 +48,7 @@ def k_means(n_clust):
             size=20, weight='bold',
             color='black')
         
-    st.header('Cluster Plot')
+    st.header('Wine Cluster Plot')
     st.pyplot()
     st.write(X)
     
