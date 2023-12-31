@@ -26,17 +26,6 @@ plt.ylabel('Inertia')
 
 plt.show()
 
-from sklearn.preprocessing import StandardScaler
-sc=StandardScaler()
-X_std=sc.fit_transform(df)
-from yellowbrick.cluster import KElbowVisualizer
-kmeans=KMeans()
-visualizer=KElbowVisualizer(kmeans,k=(1,10))
-visualizer.fit(X_std)
-visualizer.poof()
-plt.show()
-
-
 st.set_option('deprecation.showPyplotGlobalUse', False)
 elbo_plot = st.pyplot()
 
