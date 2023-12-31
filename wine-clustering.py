@@ -29,7 +29,7 @@ plt.show()
 st.set_option('deprecation.showPyplotGlobalUse', False)
 elbo_plot = st.pyplot()
 
-st.sidebar.subheader("Nilai jumlah K")
+st.sidebar.subheader("Nilai jumlah Cluster")
 clust = st.sidebar.slider("Pilih Jumlah Cluster :", 2,10,3,1)
 
 def k_means(n_clust):
@@ -38,7 +38,8 @@ def k_means(n_clust):
     
     plt.figure(figsize=(10, 8))
     sns.scatterplot(x=X['Ash'], y=X['Magnesium'], hue=X['Labels'], palette=sns.color_palette('hls', n_clust))
-
+    
+    st.header('Data Cluster')
     for label in X['Labels'].unique():
         plt.annotate(label,
             (X[X['Labels'] == label]['Ash'].mean(),
