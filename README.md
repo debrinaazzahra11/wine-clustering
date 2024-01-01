@@ -110,13 +110,13 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 
     df.describe()
 
-## EDA
+## EDA 
 
-1. Mengurutkan kandungan nilai alkohol terendah sampapi tertinggi
+1. Mengurutkan kandungan nilai alkohol terendah sampapi tertinggi     
 
-    df.sort_values("Alcohol").head(10)
+     df.sort_values("Alcohol").head(10)
 
-![Alt text](.png)
+![Alt text](1.png)
     
 2. Mengurutkan kandungan nilai proline terendah sampai tertinggi
 
