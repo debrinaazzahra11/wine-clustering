@@ -170,13 +170,20 @@ Membuat DataFrame baru yang disebut X
 
     X = df.drop(['Nonflavanoid_Phenols', 'Alcohol', 'Malic_Acid', 'Total_Phenols', 'Flavanoids',      'Nonflavanoid_Phenols', 'Proanthocyanins', 'Color_Intensity', 'Hue', 'OD280', 'Proline'], axis=1)
 
-Import modul LinearRegression dari scikit-learn
+Mengaplikasikan analisis komponen utama (Principal Component Analysis atau PCA) untuk mengurangi dimensi data menjadi dua dimensi.
 
     print(X)
 
 Inisialisasi model regresi linear
 
-    lr = LinearRegression()
+    std_scaler = StandardScaler()
+    data_cluster=df.copy()
+data_cluster[data_cluster.columns]=std_scaler.fit_transform(data_cluster)
+
+pca_2 = PCA(2)
+pca_2_result = pca_2.fit_transform(data_cluster)
+
+print ('Cumulative variance explained by 2 principal components: {:.2%}'.format(np.sum(pca_2.explained_variance_ratio_)))
 
 Melatih model dengan data pelatihan
 
