@@ -263,5 +263,9 @@ Menyimpan model K-Means (kmeans) ke dalam file dengan nama 'UAS_ML1_211351155_De
     filename = 'UAS_ML1_211351155_Debrina Azzahra.sav'
     pickle.dump(kmeans,open(filename,'wb'))
 
+## Deployment
+
+Dataset: [Wine Cluster] (https://wine-clustering-7uxetzgwukkqhwptsvq79e.streamlit.app/)
+
 
 
