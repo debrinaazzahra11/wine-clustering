@@ -84,6 +84,7 @@ Setelah mengupload filenya, selanjutnya membuat folder untuk menyimpan file kagg
     !ls ~/.kaggle
 
 Lalu download datasetsnya
+
      !kaggle datasets download -d harrywang/wine-dataset-for-clustering
 
 Extract file yang tadi telah didownload
@@ -96,7 +97,6 @@ Extract file yang tadi telah didownload
 Membaca sebuah file CSV yang berisi data anggur
 
     df = pd.read_csv("/content/wine-dataset-for-clustering/wine-clustering.csv")
-    df.head()
     
 Menampilkan beberapa baris pertama dari suatu dataset yang disimpan dalam bentuk dataframe.
 
@@ -185,28 +185,46 @@ Membuat DataFrame baru yang disebut X
 
     X = df.drop(['Nonflavanoid_Phenols', 'Alcohol', 'Malic_Acid', 'Total_Phenols', 'Flavanoids',      'Nonflavanoid_Phenols', 'Proanthocyanins', 'Color_Intensity', 'Hue', 'OD280', 'Proline'], axis=1)
 
-Mengaplikasikan analisis komponen utama (Principal Component Analysis atau PCA) untuk mengurangi dimensi data menjadi dua dimensi.
+Mencetak DataFrame X ke konsol, sehingga Anda dapat melihat hasilnya setelah kolom-kolom tertentu dihapus dari DataFrame asli df.
 
     print(X)
 
-Inisialisasi model regresi linear
+## Model
 
-    std_scaler = StandardScaler()
-    data_cluster=df.copy()
-data_cluster[data_cluster.columns]=std_scaler.fit_transform(data_cluster)
+Metode "Elbow" untuk menentukan jumlah cluster yang optimal dalam algoritma K-Means.
 
-pca_2 = PCA(2)
-pca_2_result = pca_2.fit_transform(data_cluster)
+    # Menentukan Jumlah Cluster Dengan Elbow
 
-print ('Cumulative variance explained by 2 principal components: {:.2%}'.format(np.sum(pca_2.explained_variance_ratio_)))
+    clusters = []
+    for i in range(1, 11):
+    km = KMeans(n_clusters=i).fit(X)
+    clusters.append(km.inertia_)
 
-Melatih model dengan data pelatihan
+    plt.figure(figsize=(10, 8))
+    sns.lineplot(x=list(range(1, 11)), y=clusters)
+    plt.title('Mencari Elbow')
+    plt.xlabel('Clusters')
+    plt.ylabel('Inertia')
 
-    lr.fit(x_train, y_train)
+    plt.show()
 
-Melakukan prediksi
+Memilih jumlah cluster yang memiliki skor silhouette tertinggi. Semakin tinggi skor silhouette, semakin baik pengelompokan.
 
-    predik = lr.predict(X_test)
+    sc=StandardScaler()
+    X_std=sc.fit_transform(df)
+
+    silhouette_scores = []
+    for k in range(2, 11):
+    kmeans = KMeans(n_clusters=k, n_init=15, max_iter=500, random_state=0)
+    clusters = kmeans.fit_predict(X)
+    silhouette_scores.append(silhouette_score(X, clusters))
+
+    plt.figure(figsize=(8, 6))
+    plt.plot(range(2, 11), silhouette_scores, marker='o')
+    plt.title('Silhouette Score')
+    plt.xlabel('Number of Clusters')
+    plt.ylabel('Score')
+    plt.show()
 
 Mengukur akurasi model regresi linear dengan membandingkan hasil prediksi model pada data pengujian 
 
