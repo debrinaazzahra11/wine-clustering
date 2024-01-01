@@ -102,8 +102,6 @@ Menampilkan beberapa baris pertama dari suatu dataset yang disimpan dalam bentuk
 
     df.head()
 
-![Alt text](df.png)
-
 Menampilkan informasi ringkas tentang tabel data dalam pandas.
 
     df.info()
@@ -281,6 +279,8 @@ Menyimpan model K-Means (kmeans) ke dalam file dengan nama 'UAS_ML1_211351155_De
 ## Deployment
 
 Streamlit : [Wine Cluster](https://wine-clustering-7uxetzgwukkqhwptsvq79e.streamlit.app/)
+
+![Alt text](streamlit.png)
 
 
 
