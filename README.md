@@ -114,34 +114,49 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 
 1. Mengurutkan kandungan nilai alkohol terendah sampapi tertinggi
 
-    df.sort_values("Alcohol").head(10)
+      df.sort_values("Alcohol").head(10)
 
-   ![Alt text](image-1.png)
+     ![Alt text](image-1.png)
 
-3. Mengurutkan kandungan nilai proline terendah sampai tertinggi
+2. Mengurutkan kandungan nilai proline terendah sampai tertinggi
 
-    df.sort_values("Proline").head()
+      df.sort_values("Proline").head()
 
-    ![Alt text](image-1.png)
+      ![Alt text](image-1.png)
 
-4. Menampilkan berapa banyak tipe kandungan Alcohol
+3. Menampilkan berapa banyak tipe kandungan Alcohol
 
-    df["Alcohol"].value_counts()
+      df["Alcohol"].value_counts()
 
-    ![Alt text](image-1.png)
+      ![Alt text](image-1.png)
 
-5. Mengurutkan banyak kandungan nilai alkohol berdasarkan kandungan nilai magnesium
+4. Mengurutkan banyak kandungan nilai alkohol berdasarkan kandungan nilai magnesium
 
-    df_sorted = df.sort_values(by=['Alcohol', 'Magnesium'], ascending=[True,False])
-    df_sorted.head()
-
-    ![Alt text](image-1.png)
-
-6. Menampilkan jumlah kandungan nilai alkohol pada estimasi jumlah kandungan nilai magnesium
-
-    pd.crosstab(df["Alcohol"],df["Magnesium"], margins=True)
+      df_sorted = df.sort_values(by=['Alcohol', 'Magnesium'], ascending=[True,False])
+      df_sorted.head()
 
     ![Alt text](image-1.png)
+
+5. Menampilkan jumlah kandungan nilai alkohol pada estimasi jumlah kandungan nilai magnesium
+
+      pd.crosstab(df["Alcohol"],df["Magnesium"], margins=True)
+
+      ![Alt text](image-1.png)
+
+6. Haat.map ini akan menampilkan data yang hilang dalam DataFrame dengan warna tertentu, secara visual melihat di mana data hilang.
+
+      sns.heatmap(df.isnull())
+
+      ![Alt text](image-1.png)
+      
+7. Matriks korelasi dan menampilkan heatmap dari korelasi antara variabel-variabel numerik dalam DataFrame df.
+      plt.figure(figsize=(10,10))
+      sns.heatmap(df.corr(),annot=True,fmt=".2f",linewidths=0.7,cmap="coolwarm")
+      plt.show()
+
+8. Menampilkan histogram untuk setiap kolom numerik dalam DataFrame df
+     df.hist(figsize=(12,12));
+   
 
 
 ## Preprocessing
