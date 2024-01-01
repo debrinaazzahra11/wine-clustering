@@ -148,7 +148,7 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 
     sns.heatmap(df.isnull())
 
-![Alt text](gambar1.png)
+![Alt text](gambar1.jpeg)
 
 7. Matriks korelasi dan menampilkan heatmap dari korelasi antara variabel-variabel numerik dalam DataFrame df.
 
