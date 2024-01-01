@@ -52,7 +52,6 @@ Untuk data collection ini, saya mendapatkan dataset yang nantinya digunakan dari
 
 ## Library yang akan digunakan
 **Data Discovery And Profiling**<br>
-Teknik EDA.<br>
 
 Import semua library yang dibutuhkan
 
@@ -167,13 +166,13 @@ Untuk mencari nilai yang kosong atau null
 
     df.isnull().sum()
 
-Membuat model Linear Regressionnya
+Membuat DataFrame baru yang disebut X
 
-    model = LinearRegression()
+    X = df.drop(['Nonflavanoid_Phenols', 'Alcohol', 'Malic_Acid', 'Total_Phenols', 'Flavanoids',      'Nonflavanoid_Phenols', 'Proanthocyanins', 'Color_Intensity', 'Hue', 'OD280', 'Proline'], axis=1)
 
 Import modul LinearRegression dari scikit-learn
 
-    from sklearn.linear_model import LinearRegression
+    print(X)
 
 Inisialisasi model regresi linear
 
