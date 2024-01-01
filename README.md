@@ -114,7 +114,9 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 
 1. Mengurutkan kandungan nilai alkohol terendah sampapi tertinggi     
 
-      ```df.sort_values("Alcohol").head(10)
+      ```
+      df.sort_values("Alcohol").head(10)
+      ```
 
 ![Alt text](1.png)
     
