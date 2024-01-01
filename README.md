@@ -209,6 +209,8 @@ Metode "Elbow" untuk menentukan jumlah cluster yang optimal dalam algoritma K-Me
 
     plt.show()
 
+![Alt text](model1.png)
+
 Memilih jumlah cluster yang memiliki skor silhouette tertinggi. Semakin tinggi skor silhouette, semakin baik pengelompokan.
 
     sc=StandardScaler()
@@ -227,6 +229,7 @@ Memilih jumlah cluster yang memiliki skor silhouette tertinggi. Semakin tinggi s
     plt.ylabel('Score')
     plt.show()
 
+![Alt text](model2.png)
 
 ## Visualisasi
 
