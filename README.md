@@ -155,6 +155,7 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
       plt.show()
 
 8. Menampilkan histogram untuk setiap kolom numerik dalam DataFrame df
+   
      df.hist(figsize=(12,12));
    
 
@@ -226,10 +227,41 @@ Memilih jumlah cluster yang memiliki skor silhouette tertinggi. Semakin tinggi s
     plt.ylabel('Score')
     plt.show()
 
-Mengukur akurasi model regresi linear dengan membandingkan hasil prediksi model pada data pengujian 
 
-    y = lr.score(X_test, y_test)
-    print('Akurasi Model Regresi Linier : ', y)
+## Visualisasi
 
-Hasilnya 0.9991840271557658. Untuk memprediksi jumlah kalori berdasarkan nilai-nilai yang diberikan. Hasil prediksi akan disimpan dalam variabel prediksi 
+pengelompokan data menjadi 4 cluster 
+
+    n_clust = 4
+    kmean = KMeans(n_clusters=n_clust).fit(X)
+    X['Labels'] = kmean.labels_
+
+Memvisualisasikan bagaimana data terkelompok berdasarkan dua fitur tertentu ('Ash' dan 'Magnesium') dan melihat pola terbentuk
+
+    plt.figure(figsize=(10, 8))
+    
+    Anggap X adalah DataFrame  dan 'Labels' adalah kolom yang menunjukkan label
+    sns.scatterplot(x=X['Ash'], y=X['Magnesium'], hue=X['Labels'], palette=sns.color_palette('hls', n_clust))
+
+    for label in X['Labels'].unique():
+    plt.annotate(label,
+                 (X[X['Labels'] == label]['Ash'].mean(),
+                  X[X['Labels'] == label]['Magnesium'].mean()),
+                 horizontalalignment='center',
+                 verticalalignment='center',
+                 size=20, weight='bold',
+                 color='black')
+
+    plt.show()
+
+## Save Model ( Pickle )
+
+Menyimpan model K-Means (kmeans) ke dalam file dengan nama 'UAS_ML1_211351155_Debrina Azzahra.sav'. 
+
+    import pickle
+
+    filename = 'UAS_ML1_211351155_Debrina Azzahra.sav'
+    pickle.dump(kmeans,open(filename,'wb'))
+
+
 
