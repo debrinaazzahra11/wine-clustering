@@ -254,6 +254,8 @@ Memvisualisasikan bagaimana data terkelompok berdasarkan dua fitur tertentu ('As
 
     plt.show()
 
+  ![Alt text](visualisasi.png)
+
 ## Save Model ( Pickle )
 
 Menyimpan model K-Means (kmeans) ke dalam file dengan nama 'UAS_ML1_211351155_Debrina Azzahra.sav'. 
