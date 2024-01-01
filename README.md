@@ -30,7 +30,7 @@ Tahap ini, membuat ringkasaan (summary) dan mengidentifikasi potensi masalah m d
 
 Dataset: [Wine Cluster](https://www.kaggle.com/datasets/harrywang/wine-dataset-for-clustering/data)
 
-### Variabel-variabel pada Heart Failure Prediction Dataset adalah sebagai berikut:
+### Variabel-variabel adalah sebagai berikut:
 
 - Alcohol                         ( Menentukan jumlah kandungan alkohol) (%)                  
 - Malic acid                      ( Menetukan jumlah kandungan asam malat ) (g/L)
