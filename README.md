@@ -102,6 +102,8 @@ Menampilkan beberapa baris pertama dari suatu dataset yang disimpan dalam bentuk
 
     df.head()
 
+![Alt text](df.png)
+
 Menampilkan informasi ringkas tentang tabel data dalam pandas.
 
     df.info()
@@ -148,7 +150,7 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 
     sns.heatmap(df.isnull())
 
-![Alt text](gambar1.ong)
+![Alt text](gambar1.png)
 
 7. Matriks korelasi dan menampilkan heatmap dari korelasi antara variabel-variabel numerik dalam DataFrame df.
 
@@ -195,6 +197,8 @@ Membuat DataFrame baru yang disebut X
 Mencetak DataFrame X ke konsol, sehingga Anda dapat melihat hasilnya setelah kolom-kolom tertentu dihapus dari DataFrame asli df.
 
     print(X)
+
+![Alt text](print.png)
 
 ## Model
 
