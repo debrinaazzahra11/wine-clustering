@@ -265,7 +265,7 @@ Menyimpan model K-Means (kmeans) ke dalam file dengan nama 'UAS_ML1_211351155_De
 
 ## Deployment
 
-Dataset: [Wine Cluster] (https://wine-clustering-7uxetzgwukkqhwptsvq79e.streamlit.app/)
+Dataset: [Wine Cluster](https://wine-clustering-7uxetzgwukkqhwptsvq79e.streamlit.app/)
 
 
 
