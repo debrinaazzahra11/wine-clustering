@@ -116,19 +116,19 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 
      df.sort_values("Alcohol").head(10)
 
-![Alt text](1.jpng)
+![Alt text](1.jpeg)
     
 2. Mengurutkan kandungan nilai proline terendah sampai tertinggi
 
       df.sort_values("Proline").head()
 
-![Alt text](2.jpng)
+![Alt text](2.jpeg)
 
 3. Menampilkan berapa banyak tipe kandungan Alcohol
 
     df["Alcohol"].value_counts()
 
-![Alt text](3.jpng)
+![Alt text](3.jpeg)
 
     
 4. Mengurutkan banyak kandungan nilai alkohol berdasarkan kandungan nilai magnesium
@@ -136,13 +136,13 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
     df_sorted = df.sort_values(by=['Alcohol', 'Magnesium'], ascending=[True,False])
     df_sorted.head()
 
-![Alt text](4.jpng)
+![Alt text](4.jpeg)
 
 5. Menampilkan jumlah kandungan nilai alkohol pada estimasi jumlah kandungan nilai magnesium
 
     pd.crosstab(df["Alcohol"],df["Magnesium"], margins=True)
 
-![Alt text](5.jpng)
+![Alt text](5.jpeg)
     
 6. Haat.map ini akan menampilkan data yang hilang dalam DataFrame dengan warna tertentu, secara visual melihat di mana data hilang.
 
