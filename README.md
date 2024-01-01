@@ -159,7 +159,7 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 ![Alt text](gambar2.png)
 
  
-9. Menampilkan histogram untuk setiap kolom numerik dalam DataFrame df
+8. Menampilkan histogram untuk setiap kolom numerik dalam DataFrame df
 
     df.hist(figsize=(12,12))
    
@@ -195,8 +195,6 @@ Membuat DataFrame baru yang disebut X
 Mencetak DataFrame X ke konsol, sehingga Anda dapat melihat hasilnya setelah kolom-kolom tertentu dihapus dari DataFrame asli df.
 
     print(X)
-
-![Alt text](print.png)
 
 ## Model
 
