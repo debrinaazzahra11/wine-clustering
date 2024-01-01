@@ -116,7 +116,7 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 
       df.sort_values("Alcohol").head(10)
 
-     ![Alt text](image-1.png)
+     ![Alt text](.png)
 
 2. Mengurutkan kandungan nilai proline terendah sampai tertinggi
 
@@ -147,17 +147,21 @@ Metode ini memberikan gambaran cepat tentang statistik dasar dari setiap kolom n
 
       sns.heatmap(df.isnull())
 
-      ![Alt text](image-1.png)
+      ![Alt text](gambar1.png)
       
 7. Matriks korelasi dan menampilkan heatmap dari korelasi antara variabel-variabel numerik dalam DataFrame df.
+   
       plt.figure(figsize=(10,10))
       sns.heatmap(df.corr(),annot=True,fmt=".2f",linewidths=0.7,cmap="coolwarm")
       plt.show()
+   
+![Alt text](gambar2.png)
 
-8. Menampilkan histogram untuk setiap kolom numerik dalam DataFrame df
+9. Menampilkan histogram untuk setiap kolom numerik dalam DataFrame df
    
-     df.hist(figsize=(12,12));
+     df.hist(figsize=(12,12))
    
+![Alt text](gambar3.png)
 
 
 ## Preprocessing
